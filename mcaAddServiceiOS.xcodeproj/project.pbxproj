@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4D23D5CD942746DA6F47E0AB /* Pods_mcaAddServiceiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */; };
+		7B3D707C21E5374000062286 /* AddPrepaidStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */; };
+		7B3D708021E538C900062286 /* AddPrepaidStep1VC.swift in Headers */ = {isa = PBXBuildFile; fileRef = 7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B3D708521E53D3F00062286 /* AddPrepaidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */; };
 		7B68D0BF21E40622002E9786 /* mcaAddServiceiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B68D0BD21E40622002E9786 /* mcaAddServiceiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaAddServiceiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrepaidStep1VC.swift; sourceTree = "<group>"; };
+		7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrepaidStep2VC.swift; sourceTree = "<group>"; };
 		7B68D0BA21E40622002E9786 /* mcaAddServiceiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaAddServiceiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B68D0BD21E40622002E9786 /* mcaAddServiceiOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcaAddServiceiOS.h; sourceTree = "<group>"; };
 		7B68D0BE21E40622002E9786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +66,8 @@
 		7B68D0BC21E40622002E9786 /* mcaAddServiceiOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */,
+				7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */,
 				7B68D0BD21E40622002E9786 /* mcaAddServiceiOS.h */,
 				7B68D0BE21E40622002E9786 /* Info.plist */,
 			);
@@ -84,6 +91,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B68D0BF21E40622002E9786 /* mcaAddServiceiOS.h in Headers */,
+				7B3D708021E538C900062286 /* AddPrepaidStep1VC.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +129,7 @@
 				TargetAttributes = {
 					7B68D0B921E40622002E9786 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -199,6 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B3D707C21E5374000062286 /* AddPrepaidStep1VC.swift in Sources */,
+				7B3D708521E53D3F00062286 /* AddPrepaidStep2VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +268,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -315,7 +326,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -331,6 +342,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC507C39F740F04FE2BB5CA5 /* Pods-mcaAddServiceiOS.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -340,10 +352,15 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = mcaAddServiceiOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.miclaro.app.mcaAddServiceiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,6 +370,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9ED237CAFC7E7619FBB60230 /* Pods-mcaAddServiceiOS.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -362,7 +380,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = mcaAddServiceiOS/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.miclaro.app.mcaAddServiceiOS;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
