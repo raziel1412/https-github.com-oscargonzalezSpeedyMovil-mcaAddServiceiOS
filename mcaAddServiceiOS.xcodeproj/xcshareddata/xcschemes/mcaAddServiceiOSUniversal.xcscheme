@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7B68D0B921E40622002E9786"
-               BuildableName = "mcaAddServiceiOS.framework"
-               BlueprintName = "mcaAddServiceiOS"
+               BlueprintIdentifier = "1D03792A21ECF68100F70AF5"
+               BuildableName = "mcaAddServiceiOSUniversal"
+               BlueprintName = "mcaAddServiceiOSUniversal"
                ReferencedContainer = "container:mcaAddServiceiOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B68D0B921E40622002E9786"
-            BuildableName = "mcaAddServiceiOS.framework"
-            BlueprintName = "mcaAddServiceiOS"
+            BlueprintIdentifier = "1D03792A21ECF68100F70AF5"
+            BuildableName = "mcaAddServiceiOSUniversal"
+            BlueprintName = "mcaAddServiceiOSUniversal"
             ReferencedContainer = "container:mcaAddServiceiOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7B68D0B921E40622002E9786"
-            BuildableName = "mcaAddServiceiOS.framework"
-            BlueprintName = "mcaAddServiceiOS"
+            BlueprintIdentifier = "1D03792A21ECF68100F70AF5"
+            BuildableName = "mcaAddServiceiOSUniversal"
+            BlueprintName = "mcaAddServiceiOSUniversal"
             ReferencedContainer = "container:mcaAddServiceiOS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
