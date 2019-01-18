@@ -22,8 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1D0378EB21E92B3B00F70AF5 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0378EA21E92B3B00F70AF5 /* mcaManageriOS.framework */; };
 		1D0379FA21ED40A300F70AF5 /* Pods_mcaAddServiceiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D373F0C21F2873C00168BF4 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D373F0B21F2873C00168BF4 /* mcaManageriOS.framework */; };
 		4D23D5CD942746DA6F47E0AB /* Pods_mcaAddServiceiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */; };
 		7B3D707C21E5374000062286 /* AddPrepaidStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */; };
 		7B3D708021E538C900062286 /* AddPrepaidStep1VC.swift in Headers */ = {isa = PBXBuildFile; fileRef = 7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,7 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D0378EA21E92B3B00F70AF5 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D373F0B21F2873C00168BF4 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaAddServiceiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrepaidStep1VC.swift; sourceTree = "<group>"; };
 		7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrepaidStep2VC.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0378EB21E92B3B00F70AF5 /* mcaManageriOS.framework in Frameworks */,
+				1D373F0C21F2873C00168BF4 /* mcaManageriOS.framework in Frameworks */,
 				4D23D5CD942746DA6F47E0AB /* Pods_mcaAddServiceiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -72,7 +72,7 @@
 		44D3404715FACA4B17032497 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D0378EA21E92B3B00F70AF5 /* mcaManageriOS.framework */,
+				1D373F0B21F2873C00168BF4 /* mcaManageriOS.framework */,
 				2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */,
 			);
 			name = Frameworks;
@@ -347,10 +347,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -410,6 +411,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCCION;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -420,7 +422,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC507C39F740F04FE2BB5CA5 /* Pods-mcaAddServiceiOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -452,7 +454,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9ED237CAFC7E7619FBB60230 /* Pods-mcaAddServiceiOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

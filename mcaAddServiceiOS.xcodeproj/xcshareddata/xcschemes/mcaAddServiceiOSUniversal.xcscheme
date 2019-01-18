@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "1D03792A21ECF68100F70AF5"
+            BuildableName = "mcaAddServiceiOSUniversal"
+            BlueprintName = "mcaAddServiceiOSUniversal"
+            ReferencedContainer = "container:mcaAddServiceiOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
