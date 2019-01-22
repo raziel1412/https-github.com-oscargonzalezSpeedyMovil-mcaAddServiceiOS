@@ -140,7 +140,7 @@
 				7B68D0B621E40622002E9786 /* Sources */,
 				7B68D0B721E40622002E9786 /* Frameworks */,
 				7B68D0B821E40622002E9786 /* Resources */,
-				CAC3F2A96412CA541FE8EE89 /* [CP] Copy Pods Resources */,
+				F0A1F6E538A80BC4A634785C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,20 +229,18 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CAC3F2A96412CA541FE8EE89 /* [CP] Copy Pods Resources */ = {
+		F0A1F6E538A80BC4A634785C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaAddServiceiOS/Pods-mcaAddServiceiOS-resources.sh",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Resources/Localizations.bundle",
 				"${PODS_ROOT}/khenshin/Products/khenshin.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/khenshin.bundle",
 			);
