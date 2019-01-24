@@ -22,9 +22,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1D0379FA21ED40A300F70AF5 /* Pods_mcaAddServiceiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1D373F0C21F2873C00168BF4 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D373F0B21F2873C00168BF4 /* mcaManageriOS.framework */; };
-		4D23D5CD942746DA6F47E0AB /* Pods_mcaAddServiceiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */; };
+		1D8C3BA321F93595005DBA39 /* mcaManageriOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3BA221F93595005DBA39 /* mcaManageriOS.framework */; };
+		1D8C3BA521F9359B005DBA39 /* Pods_mcaAddServiceiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8C3BA421F9359B005DBA39 /* Pods_mcaAddServiceiOS.framework */; };
 		7B3D707C21E5374000062286 /* AddPrepaidStep1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */; };
 		7B3D708021E538C900062286 /* AddPrepaidStep1VC.swift in Headers */ = {isa = PBXBuildFile; fileRef = 7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B3D708521E53D3F00062286 /* AddPrepaidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */; };
@@ -38,15 +37,14 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D0379FA21ED40A300F70AF5 /* Pods_mcaAddServiceiOS.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D373F0B21F2873C00168BF4 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mcaAddServiceiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C3BA221F93595005DBA39 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D8C3BA421F9359B005DBA39 /* Pods_mcaAddServiceiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_mcaAddServiceiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3D707B21E5373F00062286 /* AddPrepaidStep1VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrepaidStep1VC.swift; sourceTree = "<group>"; };
 		7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPrepaidStep2VC.swift; sourceTree = "<group>"; };
 		7B68D0BA21E40622002E9786 /* mcaAddServiceiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mcaAddServiceiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,8 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D373F0C21F2873C00168BF4 /* mcaManageriOS.framework in Frameworks */,
-				4D23D5CD942746DA6F47E0AB /* Pods_mcaAddServiceiOS.framework in Frameworks */,
+				1D8C3BA521F9359B005DBA39 /* Pods_mcaAddServiceiOS.framework in Frameworks */,
+				1D8C3BA321F93595005DBA39 /* mcaManageriOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +70,8 @@
 		44D3404715FACA4B17032497 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D373F0B21F2873C00168BF4 /* mcaManageriOS.framework */,
-				2896BD955DBC744443336B3F /* Pods_mcaAddServiceiOS.framework */,
+				1D8C3BA421F9359B005DBA39 /* Pods_mcaAddServiceiOS.framework */,
+				1D8C3BA221F93595005DBA39 /* mcaManageriOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,7 +138,7 @@
 				7B68D0B621E40622002E9786 /* Sources */,
 				7B68D0B721E40622002E9786 /* Frameworks */,
 				7B68D0B821E40622002E9786 /* Resources */,
-				F0A1F6E538A80BC4A634785C /* [CP] Copy Pods Resources */,
+				B05F7BF3ADC6F2EC12CF2E91 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,7 +227,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F0A1F6E538A80BC4A634785C /* [CP] Copy Pods Resources */ = {
+		B05F7BF3ADC6F2EC12CF2E91 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,7 +418,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC507C39F740F04FE2BB5CA5 /* Pods-mcaAddServiceiOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -452,7 +449,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9ED237CAFC7E7619FBB60230 /* Pods-mcaAddServiceiOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
