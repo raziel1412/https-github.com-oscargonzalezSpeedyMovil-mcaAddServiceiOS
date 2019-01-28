@@ -22,11 +22,8 @@ public class AddPrepaidStep1VC: UIViewController, MobilePhoneNumberOnChangeDeleg
     /// Botón para continuar
     var nextButton: RedBorderWhiteBackgroundButton!
     
-    
     func setupElements() {
         self.view.backgroundColor = UIColor.white
-        //self.initWith(navigationType: navType.addPrePaid)
-        self.initWith(navigationType: .IconBack, headerTitle: "Agregar Prepago")
         let scrollView : UIScrollView = UIScrollView(frame: .zero)
         let viewContent : UIView = UIView(frame: self.view.bounds)
         headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.addService?.header, subTitle: conf?.translations?.data?.registro?.registerPrepaid)
