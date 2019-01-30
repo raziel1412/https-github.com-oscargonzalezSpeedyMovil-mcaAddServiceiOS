@@ -319,7 +319,6 @@ class AddPrepaidStep2VC: UIViewController {
                                                 container.isSideViewControllerPresented = false;
                                             }
             })
-  
         })
     }
 }
