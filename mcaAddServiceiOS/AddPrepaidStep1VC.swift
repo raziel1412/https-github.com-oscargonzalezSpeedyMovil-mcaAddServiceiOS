@@ -97,10 +97,11 @@ public class AddPrepaidStep1VC: UIViewController, MobilePhoneNumberOnChangeDeleg
         self.setupElements()
 
         let actionType = mcaManagerSession.getActionType()
-        if ((mcaManagerSession.getDigitalBirth()! && actionType != 0) || mcaManagerSession.getCustomerWithoutServices()){
-            AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewServicioPrepago(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil", type: "1", detenido: false)
-        }else{
+        if (actionType != 0 || mcaManagerSession.getCustomerWithoutServices()){
             AnalyticsInteractionSingleton.sharedInstance.ADBTrackView(viewName: "Sin servicios|Agregar prepago", detenido: false)
+            
+        }else{
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewServicioPrepago(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil", type: "1", detenido: false)
         }
     }
     
@@ -123,10 +124,10 @@ public class AddPrepaidStep1VC: UIViewController, MobilePhoneNumberOnChangeDeleg
     /// Función encargada de enviar a términos y condiciones
     func lnkTerminos_OnClick(sender: Any) {
         let actionType = mcaManagerSession.getActionType()
-        if ((mcaManagerSession.getDigitalBirth()! && actionType != 0) || mcaManagerSession.getCustomerWithoutServices()){
-            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil:Terminos y condiciones")
-        }else{
+        if (actionType != 0 || mcaManagerSession.getCustomerWithoutServices()){
             AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Sin servicios|Agregar prepago:Terminos y condiciones")
+        }else{
+              AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil:Terminos y condiciones")
         }
         
         if false == mcaManagerSession.isNetworkConnected() {
@@ -142,11 +143,11 @@ public class AddPrepaidStep1VC: UIViewController, MobilePhoneNumberOnChangeDeleg
     }
     /// Función encargada de validar y envíar el SMS para la fase 2 de agregar prepago
     func sendSMS() {
-        let actionType = mcaManagerSession.getActionType()        
-        if ((mcaManagerSession.getDigitalBirth()! && actionType != 0) || mcaManagerSession.getCustomerWithoutServices()){
-            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil:Continuar")
-        }else{
+        let actionType = mcaManagerSession.getActionType()
+        if (actionType != 0 || mcaManagerSession.getCustomerWithoutServices()){
             AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Sin servicios|Agregar prepago:Continuar")
+        }else{
+            AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 1|Ingresar numero movil:Continuar")
         }
         
         var message = ""
