@@ -12,7 +12,6 @@
 			buildConfigurationList = 1D03792D21ECF68100F70AF5 /* Build configuration list for PBXAggregateTarget "mcaAddServiceiOSUniversal" */;
 			buildPhases = (
 				1D03795821ECF84500F70AF5 /* ShellScript */,
-				1D0379F921ED409800F70AF5 /* CopyFiles */,
 			);
 			dependencies = (
 			);
@@ -29,18 +28,6 @@
 		7B3D708521E53D3F00062286 /* AddPrepaidStep2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3D708421E53D3F00062286 /* AddPrepaidStep2VC.swift */; };
 		7B68D0BF21E40622002E9786 /* mcaAddServiceiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B68D0BD21E40622002E9786 /* mcaAddServiceiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		1D0379F921ED409800F70AF5 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D8C3BA221F93595005DBA39 /* mcaManageriOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = mcaManageriOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,7 +125,7 @@
 				7B68D0B621E40622002E9786 /* Sources */,
 				7B68D0B721E40622002E9786 /* Frameworks */,
 				7B68D0B821E40622002E9786 /* Resources */,
-				9582765980795851B5F43D2A /* [CP] Copy Pods Resources */,
+				0F7C613447643B464B0DEB78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -196,6 +183,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F7C613447643B464B0DEB78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaAddServiceiOS/Pods-mcaAddServiceiOS-resources.sh",
+				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Resources/Localizations.bundle",
+				"${PODS_ROOT}/khenshin/Products/khenshin.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/khenshin.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaAddServiceiOS/Pods-mcaAddServiceiOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1D03795821ECF84500F70AF5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,26 +234,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9582765980795851B5F43D2A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaAddServiceiOS/Pods-mcaAddServiceiOS-resources.sh",
-				"${PODS_ROOT}/IBMMobileFirstPlatformFoundation/IBMMobileFirstPlatformFoundation/Resources/Localizations.bundle",
-				"${PODS_ROOT}/khenshin/Products/khenshin.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Localizations.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/khenshin.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../mcaUtilsiOS/Pods/Pods/Target Support Files/Pods-mcaAddServiceiOS/Pods-mcaAddServiceiOS-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,7 +251,6 @@
 /* Begin XCBuildConfiguration section */
 		1D03792B21ECF68100F70AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DC507C39F740F04FE2BB5CA5 /* Pods-mcaAddServiceiOS.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 85E3H648RA;
@@ -277,7 +263,6 @@
 		};
 		1D03792C21ECF68100F70AF5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9ED237CAFC7E7619FBB60230 /* Pods-mcaAddServiceiOS.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 85E3H648RA;
@@ -485,7 +470,7 @@
 				1D03792C21ECF68100F70AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7B68D0B421E40622002E9786 /* Build configuration list for PBXProject "mcaAddServiceiOS" */ = {
 			isa = XCConfigurationList;
@@ -494,7 +479,7 @@
 				7B68D0C121E40622002E9786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		7B68D0C221E40622002E9786 /* Build configuration list for PBXNativeTarget "mcaAddServiceiOS" */ = {
 			isa = XCConfigurationList;
@@ -503,7 +488,7 @@
 				7B68D0C421E40622002E9786 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
