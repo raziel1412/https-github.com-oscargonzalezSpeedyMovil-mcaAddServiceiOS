@@ -24,34 +24,40 @@ class AddPrepaidStep2VC: UIViewController {
     /// Constante que almacena la configuración
     let conf = mcaManagerSession.getGeneralConfig();
     
+    private var scrollView : UIScrollView!
+    
     var headerView : UIHeaderForm = UIHeaderForm(frame: .zero)
     
     func setupElements() {
         self.view.backgroundColor = institutionalColors.claroWhiteColor
         //self.initWith(navigationType: navType.addPrePaidCode)
-        let scrollView : UIScrollView = UIScrollView(frame: .zero)
-        let viewContainer : UIView = UIView(frame: self.view.bounds)
-        headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.addService?.header, subTitle: conf?.translations?.data?.registro?.pinValidation)
-        viewContainer.addSubview(headerView)
-        codeContainer = CodeContainerView()
-        codeContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.45, height: 40)
-        codeContainer.setPosition()
-        codeContainer.setKeyboardType(tipoTeclado: .numberPad)
-        viewContainer.addSubview(codeContainer)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(resendCode(sender:)));
-        linkeableLabel = LinkableLabel()
-        linkeableLabel.addGestureRecognizer(tap)
-        linkeableLabel.showText(text: conf?.translations?.data?.generales?.resendPin != nil ? "<b>\(conf!.translations!.data!.generales!.resendPin!)</b>" : "" )
-        linkeableLabel.textAlignment = .center
-        viewContainer.addSubview(linkeableLabel)
-        nextButton = RedBorderWhiteBackgroundButton(textButton: conf?.translations?.data?.generales?.validateBtn ?? "")
-        nextButton.addTarget(self, action: #selector(validateCode), for: UIControlEvents.touchUpInside)
-        viewContainer.addSubview(nextButton)
-        scrollView.addSubview(viewContainer)
-        scrollView.frame = viewContainer.bounds
-        scrollView.contentSize = viewContainer.bounds.size
-        self.view.addSubview(scrollView)
-        setupConstraints(view: viewContainer)
+        
+        if scrollView == nil {
+            scrollView = UIScrollView(frame: .zero)
+            let viewContainer : UIView = UIView(frame: self.view.bounds)
+            headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.addService?.header, subTitle: conf?.translations?.data?.registro?.pinValidation)
+            viewContainer.addSubview(headerView)
+            codeContainer = CodeContainerView()
+            codeContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.45, height: 40)
+            codeContainer.setPosition()
+            codeContainer.setKeyboardType(tipoTeclado: .numberPad)
+            viewContainer.addSubview(codeContainer)
+            let tap = UITapGestureRecognizer(target: self, action: #selector(resendCode(sender:)));
+            linkeableLabel = LinkableLabel()
+            linkeableLabel.addGestureRecognizer(tap)
+            linkeableLabel.showText(text: conf?.translations?.data?.generales?.resendPin != nil ? "<b>\(conf!.translations!.data!.generales!.resendPin!)</b>" : "" )
+            linkeableLabel.textAlignment = .center
+            viewContainer.addSubview(linkeableLabel)
+            nextButton = RedBorderWhiteBackgroundButton(textButton: conf?.translations?.data?.generales?.validateBtn ?? "")
+            nextButton.addTarget(self, action: #selector(validateCode), for: UIControlEvents.touchUpInside)
+            viewContainer.addSubview(nextButton)
+            scrollView.addSubview(viewContainer)
+            scrollView.frame = viewContainer.bounds
+            scrollView.contentSize = viewContainer.bounds.size
+            self.view.addSubview(scrollView)
+            setupConstraints(view: viewContainer)
+        }
+    
     }
     
     func setupConstraints(view: UIView) {

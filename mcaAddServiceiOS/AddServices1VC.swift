@@ -35,9 +35,6 @@ public class AddServices1VC : UIViewController, UITableViewDelegate, UITableView
     }
 
     func changeElements(){
-        
-        let screenSize = UIScreen.main.bounds
-        let kWidth = screenSize.width
     
         self.view.backgroundColor = institutionalColors.claroWhiteColor
         self.initWith(navigationType: .IconBack, headerTitle: "Agregar Servicio")

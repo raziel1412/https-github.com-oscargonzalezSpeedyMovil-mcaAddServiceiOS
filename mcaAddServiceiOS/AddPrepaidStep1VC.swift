@@ -19,44 +19,49 @@ public class AddPrepaidStep1VC: UIViewController, MobilePhoneNumberOnChangeDeleg
     private var headerView : UIHeaderForm = UIHeaderForm(frame: .zero)
     private var textGroup : UITextFieldGroupPhone = UITextFieldGroupPhone(frame: .zero)
     private var termsBox : TermsAndConditions = TermsAndConditions(frame: .zero)
+    private var scrollView : UIScrollView!
     /// Botón para continuar
     var nextButton: RedBorderWhiteBackgroundButton!
     
     func setupElements() {
         self.view.backgroundColor = UIColor.white
-        let scrollView : UIScrollView = UIScrollView(frame: .zero)
-        let viewContent : UIView = UIView(frame: self.view.bounds)
-        headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.addService?.header, subTitle: conf?.translations?.data?.registro?.registerPrepaid)
-        viewContent.addSubview(headerView)
         
-        textGroup.setupContent(imageName: "icon_telefono_input", text: conf?.translations?.data?.registro?.registerPrepaidNumber, placeHolder: conf?.translations?.data?.registro?.registerPrepaidNumber, countryCodeText: conf?.country?.phoneCountryCode)
-        textGroup.textField.delegate = self
-        textGroup.textField.keyboardType = .phonePad
-        viewContent.addSubview(textGroup)
-        let parte1 = conf?.translations?.data?.registro?.registerTyCFirst ?? "";
-        let parte2 = conf?.translations?.data?.generales?.termsAndConditions ?? "";
-        let parte3 = conf?.translations?.data?.registro?.registerTyCFinal ?? "";
-        //termsBox.setContent(String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3))
-        //termsBox.setupClickDelegate(target: self, action: #selector(self.lnkTerminos_OnClick(sender:)))
-        
-        termsBox.setContent(String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3), url: (mcaManagerSession.getGeneralConfig()?.termsAndConditions?.url)!, title: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.termsAndConditions ?? "", acceptTitle: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.closeBtn ?? "", offlineAction: {
-            mcaManagerSession.showOfflineMessage()
-        })
-        
-
-        viewContent.addSubview(termsBox)
-        nextButton = RedBorderWhiteBackgroundButton(textButton: conf?.translations?.data?.generales?.nextBtn ?? "")
-        nextButton.addTarget(self, action: #selector(sendSMS), for: UIControlEvents.touchUpInside)
-        nextButton.isEnabled = true
-        self.nextButton?.isUserInteractionEnabled = false
-        self.nextButton?.alpha = 0.5
-        viewContent.addSubview(nextButton)
-        scrollView.addSubview(viewContent)
-        scrollView.frame = viewContent.bounds
-        scrollView.contentSize = viewContent.bounds.size
-        self.view.addSubview(scrollView)
-        termsBox.checkBox.addTarget(self, action: #selector(self.chkValidate), for: UIControlEvents.touchUpInside)
-        setupConstraints(view: viewContent)
+        if scrollView == nil {
+            scrollView = UIScrollView(frame: .zero)
+            
+            let viewContent : UIView = UIView(frame: self.view.bounds)
+            headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.addService?.header, subTitle: conf?.translations?.data?.registro?.registerPrepaid)
+            viewContent.addSubview(headerView)
+            
+            textGroup.setupContent(imageName: "icon_telefono_input", text: conf?.translations?.data?.registro?.registerPrepaidNumber, placeHolder: conf?.translations?.data?.registro?.registerPrepaidNumber, countryCodeText: conf?.country?.phoneCountryCode)
+            textGroup.textField.delegate = self
+            textGroup.textField.keyboardType = .phonePad
+            viewContent.addSubview(textGroup)
+            let parte1 = conf?.translations?.data?.registro?.registerTyCFirst ?? "";
+            let parte2 = conf?.translations?.data?.generales?.termsAndConditions ?? "";
+            let parte3 = conf?.translations?.data?.registro?.registerTyCFinal ?? "";
+            //termsBox.setContent(String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3))
+            //termsBox.setupClickDelegate(target: self, action: #selector(self.lnkTerminos_OnClick(sender:)))
+            
+            termsBox.setContent(String(format: "%@ <b>%@</b> %@", parte1, parte2, parte3), url: (mcaManagerSession.getGeneralConfig()?.termsAndConditions?.url)!, title: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.termsAndConditions ?? "", acceptTitle: mcaManagerSession.getGeneralConfig()?.translations?.data?.generales?.closeBtn ?? "", offlineAction: {
+                mcaManagerSession.showOfflineMessage()
+            })
+            
+            
+            viewContent.addSubview(termsBox)
+            nextButton = RedBorderWhiteBackgroundButton(textButton: conf?.translations?.data?.generales?.nextBtn ?? "")
+            nextButton.addTarget(self, action: #selector(sendSMS), for: UIControlEvents.touchUpInside)
+            nextButton.isEnabled = true
+            self.nextButton?.isUserInteractionEnabled = false
+            self.nextButton?.alpha = 0.5
+            viewContent.addSubview(nextButton)
+            scrollView.addSubview(viewContent)
+            scrollView.frame = viewContent.bounds
+            scrollView.contentSize = viewContent.bounds.size
+            self.view.addSubview(scrollView)
+            termsBox.checkBox.addTarget(self, action: #selector(self.chkValidate), for: UIControlEvents.touchUpInside)
+            setupConstraints(view: viewContent)
+        }
     }
     
     func setupConstraints(view: UIView) {
