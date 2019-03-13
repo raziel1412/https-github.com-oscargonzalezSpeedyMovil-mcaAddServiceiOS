@@ -38,6 +38,7 @@ class AddPrepaidStep2VC: UIViewController {
             headerView.setupElements(imageName: "ico_seccion_registro", title: conf?.translations?.data?.addService?.header, subTitle: conf?.translations?.data?.registro?.pinValidation)
             viewContainer.addSubview(headerView)
             codeContainer = CodeContainerView()
+            codeContainer.numberCode =  6
             codeContainer.frame = CGRect(x: 0, y: 0, width: self.view.frame.width * 0.45, height: 40)
             codeContainer.setPosition()
             codeContainer.setKeyboardType(tipoTeclado: .numberPad)
