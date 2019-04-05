@@ -12,7 +12,7 @@ import mcaUtilsiOS
 import mcaManageriOS
 
 /// Clase encargada de llevar a cabo la segúnda fase de validación para agregar un prepago
-class AddPrepaidStep2VC: UIViewController {
+public class AddPrepaidStep2VC: UIViewController {
     /// Botón de siguiente
     var nextButton: RedBorderWhiteBackgroundButton!
     /// Vista de contenedor del código donde se ingresará el enviado por SMS
@@ -20,7 +20,7 @@ class AddPrepaidStep2VC: UIViewController {
     /// Etiqueta con acción para reenviar el código
     var linkeableLabel: LinkableLabel!
     /// Variable contenedora del teléfono del usuario
-    var phoneUser: String = ""
+    public var phoneUser: String = ""
     /// Constante que almacena la configuración
     let conf = mcaManagerSession.getGeneralConfig();
     
@@ -93,7 +93,7 @@ class AddPrepaidStep2VC: UIViewController {
     
     
     /// Función encargada de inicializar elementos de la vista e inicializar variables
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupElements()
     }
@@ -101,8 +101,8 @@ class AddPrepaidStep2VC: UIViewController {
     /// Función encargada de validar el código introducido con el del SMS
     func validateCode() {
         let timeSMS = AnalyticsInteractionSingleton.sharedInstance.stopTimer()
-        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewServicioPrepago(viewName: "Mis servicios|Agregar prepago|Paso 4Ingresar codigo verificacion", type: "4", detenido: false, intervalo: timeSMS)
-        AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 4Ingresar codigo verificacion:Valida")
+        AnalyticsInteractionSingleton.sharedInstance.ADBTrackViewServicioPrepago(viewName: "Mis servicios|Agregar prepago|Paso 4|Ingresar codigo verificacion", type: "4", detenido: false, intervalo: timeSMS)
+        AnalyticsInteractionSingleton.sharedInstance.ADBTrackCustomLink(viewName: "Mis servicios|Agregar prepago|Paso 4|Ingresar codigo verificacion:Valida")
         let shouldContinue = self.shouldContinue()
         if shouldContinue.should {
             self.callWSvalidateCode()
@@ -136,12 +136,12 @@ class AddPrepaidStep2VC: UIViewController {
     }
     
     /// Función para determinar cuando se toque cualquier elemento de la vista
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 
     /// Alerta de insuficiencia de memoria
-    override func didReceiveMemoryWarning() {
+    public override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -167,8 +167,8 @@ class AddPrepaidStep2VC: UIViewController {
         
         let questionPhone = SecurityQuestionRequest();
         questionPhone.idQuestion = "6";
-        let codigoPais = (mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode ?? "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "+", with: "")
-        let claroNumber = String(format: "%@%@", codigoPais, self.phoneUser);
+//        let codigoPais = (mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode ?? "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "+", with: "")
+        let claroNumber = String(format: "%@", self.phoneUser);
         questionPhone.answer = claroNumber
         questions.append(questionPhone)
         
@@ -206,8 +206,8 @@ class AddPrepaidStep2VC: UIViewController {
             let infoUser = mcaManagerSession.getCurrentSession()
             
             let req = ValidateNumberRequest()
-            let codigoPais = (mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode ?? "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "+", with: "")
-            let claroNumber = String(format: "%@%@", codigoPais, self.phoneUser);
+//            let codigoPais = (mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode ?? "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "+", with: "")
+            let claroNumber = String(format: "%@", self.phoneUser);
             req.validateNumber?.claroNumber = claroNumber
             
             req.validateNumber?.lineOfBusiness = TypeLineOfBussines(rawValue: "2").map { $0.rawValue }
@@ -278,8 +278,8 @@ class AddPrepaidStep2VC: UIViewController {
     
     /// Función que hace el llamado al Web service executeAssociateAccount
     func callWSAssociateAccount() {
-        let codigoPais = (mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode ?? "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "+", with: "")
-        let claroNumber = String(format: "%@%@", codigoPais, self.phoneUser);
+//        let codigoPais = (mcaManagerSession.getGeneralConfig()?.country?.phoneCountryCode ?? "").replacingOccurrences(of: "(", with: "").replacingOccurrences(of: ")", with: "").replacingOccurrences(of: "+", with: "")
+        let claroNumber = String(format: "%@", self.phoneUser);
         let infoUser = mcaManagerSession.getCurrentSession()
         let req = AssociateAccountRequest()
         req.associateAccount = AssociateAccount()
